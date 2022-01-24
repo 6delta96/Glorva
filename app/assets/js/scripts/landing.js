@@ -131,7 +131,7 @@ function updateSelectedAccount(authUser){
             username = authUser.displayName
         }
         if(authUser.uuid != null){
-            document.getElementById('avatarContainer').style.backgroundImage = `url('https://mc-heads.net/body/${authUser.uuid}/right')`
+            document.getElementById('avatarContainer').style.backgroundImage = `url('https://mc-heads.net/head/${accounts[i].uuid}?scale=2&default=MHF_Steve&overlay')`
         }
     }
     user_text.innerHTML = username
@@ -229,7 +229,7 @@ const refreshServerStatus = async function(fade = false){
 
         const servStat = await getServerStatus(47, serverURL.hostname, Number(serverURL.port))
         console.log(servStat)
-        pLabel = 'PLAYERS'
+        pLabel = 'Utilisateurs'
         pVal = servStat.players.online + '/' + servStat.players.max
 
     } catch (err) {
